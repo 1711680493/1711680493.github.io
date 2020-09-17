@@ -54,5 +54,5 @@ urls.onreadystatechange = function () {
 		}
 	}
 };
-urls.open("POST", "url.json", true);
+urls.open("GET", "url.json", true);
 urls.send();
