@@ -21,5 +21,5 @@ urls.onreadystatechange = function () {
 		}
 	}
 };
-urls.open("GET", "url.json", true);
+urls.open("GET", "/url.json", true);
 urls.send();
