@@ -3,9 +3,7 @@ if (window != top) {
 }
 
 // 背景特效
-window.onload = function () {
-	textRain(document.getElementById("bg"), "Shendi");
-};
+textRain(document.getElementById("bg"), "Shendi");
 
 // 获取元素
 var websites = document.getElementById("websites");

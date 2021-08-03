@@ -10,9 +10,7 @@ if (window != top) {
 }
 
 // 背景特效
-window.onload = function () {
-	textRain(document.getElementById("index_background"), "Shendi");
-};
+textRain(document.getElementById("index_background"), "Shendi");
 
 /**
  * -控制声音的播放
