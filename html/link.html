@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="/css/main.css" />
+	<head>
+		<meta charset="utf-8" />
+		<title>引导跳转</title>
+        <script type='text/javascript'>
+            var reg = new RegExp("(^|&)url=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                var url = decodeURI(r[2]);
+                
+                // 从properties中获取对应链接跳转
+                let urls;
+                if (window.XMLHttpRequest) urls = new XMLHttpRequest();
+                else urls = new ActiveXObject("Microsoft.XMLHTTP");
+                urls.onreadystatechange = function () {
+                    if (urls.readyState == 4) {
+                        var link = urls.responseText;
+                        link = link.substring(link.indexOf(url));
+                        link = link.substring(link.indexOf("="), link.indexOf("\n"));
+
+                        location.href = link;
+                    }
+                };
+                urls.open("GET", "/url.properties", true);
+                urls.send();
+            } else {
+                location.href = "https://1711680493.github.io"
+            }
+
+        </script>
+	</head>
+</html>
