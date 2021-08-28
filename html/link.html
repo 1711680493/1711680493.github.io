@@ -17,7 +17,7 @@
                     if (urls.readyState == 4) {
                         var link = urls.responseText;
                         link = link.substring(link.indexOf(url));
-                        link = link.substring(link.indexOf("="), link.indexOf("\n"));
+                        link = link.substring(link.indexOf("=") + 1, link.indexOf("\n"));
 
                         location.href = link;
                     }
